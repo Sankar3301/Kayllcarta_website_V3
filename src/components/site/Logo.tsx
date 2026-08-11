@@ -8,11 +8,10 @@ type LogoProps = {
 /** Kaycarta wordmark: kay | two rising bars | carta, with "accountants" rule beneath. */
 export function Logo({ tone = "dark", withTagline = false, className = "" }: LogoProps) {
   const word = tone === "light" ? "text-surface-foreground" : "text-foreground";
-  const rule = tone === "light" ? "bg-surface-foreground/35" : "bg-foreground/25";
-  const sub = tone === "light" ? "text-surface-foreground/80" : "text-foreground/70";
+  const sub = tone === "light" ? "text-surface-foreground/70" : "text-foreground/60";
 
   return (
-    <span className={`flex flex-col items-center leading-none ${className}`}>
+    <span className={`flex flex-col items-start leading-none ${className}`}>
       <span className="flex items-end gap-[0.06em]">
         <span className={`font-display text-[1.55rem] font-bold tracking-[-0.03em] ${word}`}>
           kay
@@ -30,12 +29,10 @@ export function Logo({ tone = "dark", withTagline = false, className = "" }: Log
         </span>
       </span>
 
-      <span className="mt-[0.35em] flex w-full items-center gap-2">
-        <span className={`h-px flex-1 ${rule}`} />
-        <span className={`text-[0.6rem] font-medium uppercase tracking-[0.34em] ${sub}`}>
-          accountants
-        </span>
-        <span className={`h-px flex-1 ${rule}`} />
+      <span
+        className={`mt-[0.3em] pl-[0.05em] text-[0.6rem] font-medium uppercase tracking-[0.34em] ${sub}`}
+      >
+        accountants
       </span>
 
       {withTagline ? (

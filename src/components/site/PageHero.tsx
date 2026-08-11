@@ -43,7 +43,7 @@ export function PageHero({
             {children ?? (
               <Link
                 to="/contact"
-                className="mt-9 inline-flex rounded-lg bg-brand px-6 py-3.5 text-sm font-semibold text-brand-foreground transition-colors hover:bg-brand-soft"
+                className="mt-9 inline-flex rounded-lg bg-gradient-brand px-6 py-3.5 text-sm font-semibold text-brand-foreground shadow-soft transition-all duration-150 hover:bg-gradient-brand-strong"
               >
                 Book a Consultation
               </Link>

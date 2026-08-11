@@ -134,7 +134,7 @@ function ServiceDetailPage() {
             </p>
             <Link
               to="/contact"
-              className="mt-6 flex items-center justify-center gap-2 rounded-lg bg-brand px-5 py-3.5 text-sm font-semibold text-brand-foreground transition-colors hover:bg-surface"
+              className="mt-6 flex items-center justify-center gap-2 rounded-lg bg-gradient-brand px-5 py-3.5 text-sm font-semibold text-brand-foreground transition-all duration-150 hover:bg-gradient-brand-strong"
             >
               Book a Consultation
               <ArrowRight className="size-4" aria-hidden="true" />
