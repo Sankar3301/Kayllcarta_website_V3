@@ -58,7 +58,7 @@ function ResourcesPage() {
                   onClick={() => setActive(c)}
                   className={`rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] transition-all duration-200 ${
                     selected
-                      ? "border-brand bg-brand text-brand-foreground"
+                      ? "border-brand bg-gradient-brand text-brand-foreground"
                       : "border-border bg-card text-muted-foreground hover:-translate-y-0.5 hover:border-brand/50 hover:text-foreground"
                   }`}
                 >

@@ -152,7 +152,7 @@ function AboutPage() {
         <Reveal delay={100}>
           <Link
             to="/services"
-            className="mt-12 inline-flex items-center gap-2 rounded-lg bg-brand px-6 py-4 text-sm font-semibold text-brand-foreground transition-colors hover:bg-surface"
+            className="mt-12 inline-flex items-center gap-2 rounded-lg bg-gradient-brand px-6 py-4 text-sm font-semibold text-brand-foreground transition-all duration-150 hover:bg-gradient-brand-strong"
           >
             Explore our services
             <ArrowRight className="size-4" aria-hidden="true" />

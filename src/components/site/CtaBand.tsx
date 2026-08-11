@@ -21,7 +21,7 @@ export function CtaBand({
         <div className="flex flex-wrap gap-3">
           <Link
             to="/contact"
-            className="group relative inline-flex overflow-hidden rounded-lg bg-surface px-6 py-3.5 text-sm font-semibold text-surface-foreground transition-transform duration-200 hover:-translate-y-0.5"
+            className="group relative inline-flex overflow-hidden rounded-lg bg-gradient-surface px-6 py-3.5 text-sm font-semibold text-surface-foreground shadow-soft transition-transform duration-200 hover:-translate-y-0.5"
           >
             <span
               aria-hidden="true"

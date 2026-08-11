@@ -109,15 +109,33 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <div id="main-content" tabIndex={-1} className="min-h-screen bg-background">
-      <div className="bg-surface text-surface-foreground">
+      <div className="relative overflow-hidden bg-surface text-surface-foreground">
         <Nav />
-        <section className="relative overflow-hidden">
+        <section className="relative isolate min-h-[560px] overflow-hidden md:min-h-[640px]">
+          <img
+            src={heroOffice}
+            alt="Kaycarta Accountants office in Thomastown, Melbourne"
+            width={1920}
+            height={1080}
+            className="absolute inset-0 -z-20 h-full w-full animate-ken-burns object-cover"
+          />
+          {/* Scrim: blends the photo into the surface color so overlaid text stays
+              legible — built from --surface (the site's own charcoal token), not a
+              flat black, so it reads as part of this palette. */}
           <div
-            className="motif absolute inset-0 text-surface-foreground opacity-70"
+            className="absolute inset-0 -z-10"
+            style={{
+              backgroundImage: `linear-gradient(115deg, color-mix(in oklab, var(--surface) 96%, transparent) 0%, color-mix(in oklab, var(--surface) 78%, transparent) 42%, color-mix(in oklab, var(--surface) 35%, transparent) 100%), linear-gradient(to top, color-mix(in oklab, var(--surface) 92%, transparent) 0%, transparent 55%)`,
+            }}
             aria-hidden="true"
           />
-          <div className="relative mx-auto grid max-w-[1240px] items-center gap-14 px-5 py-20 md:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
-            <div>
+          <div
+            className="motif absolute inset-0 -z-10 text-surface-foreground opacity-40"
+            aria-hidden="true"
+          />
+
+          <div className="relative mx-auto max-w-[1240px] px-5 py-20 md:px-8 md:py-28 lg:py-32">
+            <div className="max-w-2xl">
               <Reveal variant="up" duration={500}>
                 <p className="eyebrow text-brand-soft">
                   <span
@@ -142,14 +160,14 @@ function HomePage() {
                 <div className="mt-9 flex flex-wrap gap-3">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center gap-2 rounded-lg bg-brand px-6 py-4 text-sm font-semibold text-brand-foreground transition-colors hover:bg-brand-soft"
+                    className="inline-flex items-center gap-2 rounded-lg bg-gradient-brand px-6 py-4 text-sm font-semibold text-brand-foreground shadow-soft transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gradient-brand-strong"
                   >
                     Book a Consultation
                     <ArrowRight className="size-4" aria-hidden="true" />
                   </Link>
                   <Link
                     to="/services"
-                    className="inline-flex items-center gap-2 rounded-lg border border-surface-foreground/25 px-6 py-4 text-sm font-semibold transition-colors hover:bg-surface-foreground/10"
+                    className="inline-flex items-center gap-2 rounded-lg border border-surface-foreground/25 bg-surface-foreground/10 px-6 py-4 text-sm font-semibold backdrop-blur-sm transition-colors hover:bg-surface-foreground/15"
                   >
                     Explore our services
                   </Link>
@@ -172,17 +190,6 @@ function HomePage() {
                 </dl>
               </Reveal>
             </div>
-            <Reveal variant="scale" delay={150} duration={700}>
-              <div className="overflow-hidden rounded-2xl shadow-soft-lg">
-                <img
-                  src={heroOffice}
-                  alt="Kaycarta Accountants office in Thomastown, Melbourne"
-                  width={1200}
-                  height={900}
-                  className="w-full animate-ken-burns object-cover"
-                />
-              </div>
-            </Reveal>
           </div>
         </section>
       </div>
@@ -262,7 +269,7 @@ function HomePage() {
             <div className="mt-12">
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 rounded-lg bg-surface px-6 py-4 text-sm font-semibold text-surface-foreground transition-opacity hover:opacity-90"
+                className="inline-flex items-center gap-2 rounded-lg bg-gradient-surface px-6 py-4 text-sm font-semibold text-surface-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gradient-surface-strong"
               >
                 Explore our services
                 <ArrowRight className="size-4" aria-hidden="true" />

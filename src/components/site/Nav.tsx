@@ -103,7 +103,7 @@ export function Nav() {
           <div className="flex items-center gap-3">
             <Link
               to="/contact"
-              className="hidden rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-brand-foreground transition-colors duration-150 hover:bg-surface sm:inline-flex"
+              className="hidden rounded-lg bg-gradient-brand px-5 py-3 text-sm font-semibold text-brand-foreground shadow-soft transition-all duration-150 hover:bg-gradient-brand-strong sm:inline-flex"
             >
               Book a Consultation
             </Link>
@@ -175,7 +175,7 @@ export function Nav() {
               <Link
                 to="/contact"
                 onClick={() => setOpen(false)}
-                className="mt-4 flex items-center justify-center rounded-lg bg-brand px-5 py-3.5 text-sm font-semibold text-brand-foreground transition-colors hover:bg-brand-soft"
+                className="mt-4 flex items-center justify-center rounded-lg bg-gradient-brand px-5 py-3.5 text-sm font-semibold text-brand-foreground transition-all duration-150 hover:bg-gradient-brand-strong"
               >
                 Book a Consultation
               </Link>

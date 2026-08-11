@@ -243,7 +243,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="mt-6 inline-flex items-center gap-2 rounded-lg bg-brand px-6 py-3.5 text-sm font-semibold text-brand-foreground transition-colors hover:bg-surface disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gradient-brand px-6 py-3.5 text-sm font-semibold text-brand-foreground transition-all duration-150 hover:bg-gradient-brand-strong disabled:cursor-not-allowed disabled:opacity-60"
       >
         {submitting ? (
           <>
