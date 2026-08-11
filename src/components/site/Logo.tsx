@@ -17,12 +17,13 @@ export function Logo({ tone = "dark", withTagline = false, className = "" }: Log
           kay
         </span>
         <svg
-          viewBox="0 0 26 40"
+          viewBox="0 0 34 40"
           aria-hidden="true"
-          className="mx-[0.12em] h-[1.7rem] w-[1.1rem] shrink-0"
+          className="mx-[0.12em] h-[1.7rem] w-[1.45rem] shrink-0"
         >
-          <polygon points="2,40 2,14 11,8 11,40" className="fill-brand" />
-          <polygon points="14,40 14,8 23,2 23,40" fill="#8A8F94" />
+          {/* Both bars' long edges sit at 75° from the x-axis (dx = dy · tan(15°)) */}
+          <polygon points="2,40 9,14 18,14 11,40" className="fill-brand" />
+          <polygon points="14,40 24.2,2 33.2,2 23,40" fill="#8A8F94" />
         </svg>
         <span className={`font-display text-[1.55rem] font-bold tracking-[-0.03em] ${word}`}>
           carta

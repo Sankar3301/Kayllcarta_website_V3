@@ -167,7 +167,7 @@ function HomePage() {
                   </Link>
                   <Link
                     to="/services"
-                    className="inline-flex items-center gap-2 rounded-lg border border-surface-foreground/25 bg-surface-foreground/10 px-6 py-4 text-sm font-semibold backdrop-blur-sm transition-colors hover:bg-surface-foreground/15"
+                    className="inline-flex items-center gap-2 rounded-lg border border-surface-foreground/25 bg-gradient-ghost px-6 py-4 text-sm font-semibold backdrop-blur-sm transition-colors hover:bg-gradient-ghost-strong"
                   >
                     Explore our services
                   </Link>
