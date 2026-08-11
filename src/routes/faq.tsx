@@ -54,6 +54,7 @@ function FaqPage() {
         intro="Answers to questions we are asked most often. If yours is not covered here, get in touch."
       />
 
+      {/* FaqAccordion already reveals itself on scroll — see components/site/FaqAccordion.tsx */}
       <section className="mx-auto max-w-3xl px-5 py-20 md:px-8 md:py-24">
         <FaqAccordion items={faqs} />
       </section>

@@ -123,57 +123,65 @@ export function Nav() {
           </div>
         </div>
 
-        {open ? (
-          <nav
-            aria-label="Mobile"
-            className="border-t border-border bg-card px-5 pb-6 pt-3 lg:hidden"
-          >
-            <ul className="flex flex-col">
-              {mainLinks.slice(0, 2).map((l) => (
-                <MobileItem
-                  key={l.to}
-                  to={l.to}
-                  label={l.label}
-                  exact={l.to === "/"}
-                  onDone={() => setOpen(false)}
-                />
-              ))}
-              <li className="py-1">
-                <Link
-                  to="/services"
-                  onClick={() => setOpen(false)}
-                  className="block rounded-lg px-3 py-3 text-base font-semibold"
-                >
-                  Services
-                </Link>
-                <ul className="ml-3 border-l border-border pl-3">
-                  {services.map((s) => (
-                    <li key={s.slug}>
-                      <Link
-                        to="/services/$slug"
-                        params={{ slug: s.slug }}
-                        onClick={() => setOpen(false)}
-                        className="block rounded-lg px-3 py-2 text-sm text-foreground/75"
-                      >
-                        {s.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-              {mainLinks.slice(2).map((l) => (
-                <MobileItem key={l.to} to={l.to} label={l.label} onDone={() => setOpen(false)} />
-              ))}
-            </ul>
-            <Link
-              to="/contact"
-              onClick={() => setOpen(false)}
-              className="mt-4 flex items-center justify-center rounded-lg bg-brand px-5 py-3.5 text-sm font-semibold text-brand-foreground"
+        <div
+          className={`grid transition-[grid-template-rows] duration-300 ease-out lg:hidden ${
+            open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+          }`}
+        >
+          <div className="overflow-hidden">
+            <nav
+              aria-label="Mobile"
+              className={`border-t border-border bg-card px-5 pb-6 pt-3 transition-opacity duration-300 ${
+                open ? "opacity-100 delay-100" : "opacity-0"
+              }`}
             >
-              Book a Consultation
-            </Link>
-          </nav>
-        ) : null}
+              <ul className="flex flex-col">
+                {mainLinks.slice(0, 2).map((l) => (
+                  <MobileItem
+                    key={l.to}
+                    to={l.to}
+                    label={l.label}
+                    exact={l.to === "/"}
+                    onDone={() => setOpen(false)}
+                  />
+                ))}
+                <li className="py-1">
+                  <Link
+                    to="/services"
+                    onClick={() => setOpen(false)}
+                    className="block rounded-lg px-3 py-3 text-base font-semibold"
+                  >
+                    Services
+                  </Link>
+                  <ul className="ml-3 border-l border-border pl-3">
+                    {services.map((s) => (
+                      <li key={s.slug}>
+                        <Link
+                          to="/services/$slug"
+                          params={{ slug: s.slug }}
+                          onClick={() => setOpen(false)}
+                          className="block rounded-lg px-3 py-2 text-sm text-foreground/75"
+                        >
+                          {s.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+                {mainLinks.slice(2).map((l) => (
+                  <MobileItem key={l.to} to={l.to} label={l.label} onDone={() => setOpen(false)} />
+                ))}
+              </ul>
+              <Link
+                to="/contact"
+                onClick={() => setOpen(false)}
+                className="mt-4 flex items-center justify-center rounded-lg bg-brand px-5 py-3.5 text-sm font-semibold text-brand-foreground transition-colors hover:bg-brand-soft"
+              >
+                Book a Consultation
+              </Link>
+            </nav>
+          </div>
+        </div>
       </header>
     </div>
   );
@@ -184,10 +192,14 @@ function NavItem({ to, label, exact }: { to: string; label: string; exact?: bool
     <Link
       to={to}
       activeOptions={{ exact: Boolean(exact) }}
-      activeProps={{ className: "bg-secondary text-foreground" }}
-      className="rounded-md px-3.5 py-2 text-sm font-semibold text-foreground/75 transition-colors hover:bg-secondary hover:text-foreground"
+      activeProps={{ className: "text-foreground [&>span]:scale-x-100" }}
+      className="group relative rounded-md px-3.5 py-2 text-sm font-semibold text-foreground/75 transition-colors hover:text-foreground"
     >
       {label}
+      <span
+        aria-hidden="true"
+        className="absolute inset-x-3.5 bottom-1 h-px origin-left scale-x-0 bg-brand transition-transform duration-300 ease-out group-hover:scale-x-100"
+      />
     </Link>
   );
 }

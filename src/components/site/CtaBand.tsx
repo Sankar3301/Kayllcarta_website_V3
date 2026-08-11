@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Phone } from "lucide-react";
 
 import { CONTACT } from "./site-data";
+import { Reveal } from "./Reveal";
 
 export function CtaBand({
   title = "Speak With an Accountant About Your Situation",
@@ -12,7 +13,7 @@ export function CtaBand({
 }) {
   return (
     <section className="bg-brand text-brand-foreground">
-      <div className="mx-auto flex max-w-[1240px] flex-col gap-8 px-5 py-16 md:flex-row md:items-center md:justify-between md:px-8">
+      <Reveal className="mx-auto flex max-w-[1240px] flex-col gap-8 px-5 py-16 md:flex-row md:items-center md:justify-between md:px-8">
         <div className="max-w-2xl">
           <h2 className="text-3xl sm:text-4xl">{title}</h2>
           <p className="mt-4 text-brand-foreground/85">{body}</p>
@@ -20,9 +21,13 @@ export function CtaBand({
         <div className="flex flex-wrap gap-3">
           <Link
             to="/contact"
-            className="inline-flex rounded-lg bg-surface px-6 py-3.5 text-sm font-semibold text-surface-foreground transition-opacity hover:opacity-90"
+            className="group relative inline-flex overflow-hidden rounded-lg bg-surface px-6 py-3.5 text-sm font-semibold text-surface-foreground transition-transform duration-200 hover:-translate-y-0.5"
           >
-            Book a Consultation
+            <span
+              aria-hidden="true"
+              className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-surface-foreground/15 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+            />
+            <span className="relative">Book a Consultation</span>
           </Link>
           <a
             href={CONTACT.phoneHref}
@@ -32,7 +37,7 @@ export function CtaBand({
             {CONTACT.phone}
           </a>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

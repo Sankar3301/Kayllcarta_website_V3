@@ -4,6 +4,7 @@ import { ArrowRight, Check, Phone } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { Footer } from "@/components/site/Footer";
 import { CtaBand } from "@/components/site/CtaBand";
+import { Reveal } from "@/components/site/Reveal";
 import { getService, services, serviceProcess } from "@/components/site/services-data";
 import { CONTACT } from "@/components/site/site-data";
 import { absoluteUrl } from "@/lib/site-url";
@@ -84,20 +85,23 @@ function ServiceDetailPage() {
       <PageHero eyebrow={service.title} title={service.h1} intro={service.heroCopy} />
 
       <section className="mx-auto grid max-w-[1240px] gap-14 px-5 py-20 md:px-8 md:py-24 lg:grid-cols-[1.15fr_0.85fr]">
-        <div>
+        <Reveal>
           <h2 className="text-3xl sm:text-4xl">{service.mainHeading}</h2>
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{service.mainCopy}</p>
 
           <h3 className="mt-12 text-xl">What this service can include</h3>
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-            {service.includes.map((item: string) => (
-              <li
+            {service.includes.map((item: string, i: number) => (
+              <Reveal
                 key={item}
-                className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 text-sm"
+                as="li"
+                delay={i * 50}
+                duration={400}
+                className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 text-sm transition-colors duration-300 hover:border-brand/40"
               >
                 <Check className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden="true" />
                 {item}
-              </li>
+              </Reveal>
             ))}
           </ul>
 
@@ -120,10 +124,10 @@ function ServiceDetailPage() {
             Services are provided subject to the agreed engagement. Information on this page is
             general in nature and does not constitute personal financial, taxation or legal advice.
           </p>
-        </div>
+        </Reveal>
 
-        <aside className="lg:sticky lg:top-32 lg:self-start">
-          <div className="rounded-2xl border border-border bg-card p-8">
+        <Reveal as="aside" delay={150} className="lg:sticky lg:top-32 lg:self-start">
+          <div className="rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-soft">
             <h3 className="text-xl">Discuss {service.title}</h3>
             <p className="mt-3 text-sm text-muted-foreground">
               Speak with Kaycarta about how this service applies to your circumstances.
@@ -152,16 +156,19 @@ function ServiceDetailPage() {
                   <Link
                     to="/services/$slug"
                     params={{ slug: s.slug }}
-                    className="inline-flex items-center gap-2 text-brand hover:underline"
+                    className="group/link inline-flex items-center gap-2 text-brand hover:underline"
                   >
                     {s.title}
-                    <ArrowRight className="size-3.5" aria-hidden="true" />
+                    <ArrowRight
+                      className="size-3.5 transition-transform duration-300 group-hover/link:translate-x-1"
+                      aria-hidden="true"
+                    />
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-        </aside>
+        </Reveal>
       </section>
 
       <CtaBand />

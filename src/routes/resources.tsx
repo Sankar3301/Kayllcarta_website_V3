@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { Footer } from "@/components/site/Footer";
 import { CtaBand } from "@/components/site/CtaBand";
+import { Reveal } from "@/components/site/Reveal";
 import { resourceArticles, resourceCategories } from "@/components/site/site-data";
 import { absoluteUrl } from "@/lib/site-url";
 
@@ -55,10 +56,10 @@ function ResourcesPage() {
                   type="button"
                   aria-pressed={selected}
                   onClick={() => setActive(c)}
-                  className={`rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] transition-colors ${
+                  className={`rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] transition-all duration-200 ${
                     selected
                       ? "border-brand bg-brand text-brand-foreground"
-                      : "border-border bg-card text-muted-foreground hover:border-brand/50 hover:text-foreground"
+                      : "border-border bg-card text-muted-foreground hover:-translate-y-0.5 hover:border-brand/50 hover:text-foreground"
                   }`}
                 >
                   {c}
@@ -68,18 +69,19 @@ function ResourcesPage() {
           })}
         </ul>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {visible.map((a) => (
-            <article
-              key={a.title}
-              className="flex flex-col rounded-2xl border border-border bg-card p-7"
-            >
-              <span className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">
-                {a.category}
-              </span>
-              <h2 className="mt-4 text-lg leading-snug">{a.title}</h2>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{a.body}</p>
-            </article>
+        <div key={active} className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {visible.map((a, i) => (
+            <Reveal key={a.title} delay={Math.min(i, 6) * 60} duration={450}>
+              <article className="flex h-full flex-col rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft">
+                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">
+                  {a.category}
+                </span>
+                <h2 className="mt-4 text-lg leading-snug">{a.title}</h2>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {a.body}
+                </p>
+              </article>
+            </Reveal>
           ))}
         </div>
 

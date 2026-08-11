@@ -12,7 +12,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with Kaycarta Accountants on WhatsApp"
-      className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-3.5 text-sm font-semibold text-brand-foreground shadow-lg transition-transform hover:scale-105"
+      className="animate-pop-in fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-3.5 text-sm font-semibold text-brand-foreground shadow-soft-lg transition-transform duration-300 hover:scale-105"
     >
       <MessageCircle className="size-5" aria-hidden="true" />
       <span className="hidden sm:inline">Chat on WhatsApp</span>

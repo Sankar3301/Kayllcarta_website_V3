@@ -5,6 +5,7 @@ import { Footer } from "@/components/site/Footer";
 import { ContactCards } from "@/components/site/ContactCard";
 import { ContactForm } from "@/components/site/ContactForm";
 import { OfficeMap } from "@/components/site/OfficeMap";
+import { Reveal } from "@/components/site/Reveal";
 import { absoluteUrl } from "@/lib/site-url";
 
 export const Route = createFileRoute("/contact")({
@@ -40,11 +41,17 @@ function ContactPage() {
       />
 
       <section className="mx-auto max-w-[1240px] px-5 py-20 md:px-8 md:py-24">
-        <ContactCards />
+        <Reveal>
+          <ContactCards />
+        </Reveal>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <ContactForm />
-          <OfficeMap />
+          <Reveal delay={0}>
+            <ContactForm />
+          </Reveal>
+          <Reveal delay={150}>
+            <OfficeMap />
+          </Reveal>
         </div>
       </section>
 

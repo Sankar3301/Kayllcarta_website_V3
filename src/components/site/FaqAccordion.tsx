@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
+import { Reveal } from "./Reveal";
+
 export function FaqAccordion({ items }: { items: readonly { q: string; a: string }[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div className="divide-y divide-border overflow-hidden rounded-2xl border border-border bg-card">
+    <Reveal
+      as="div"
+      className="divide-y divide-border overflow-hidden rounded-2xl border border-border bg-card"
+    >
       {items.map((item, i) => {
         const open = openIndex === i;
         const triggerId = `faq-trigger-${i}`;
@@ -23,7 +28,7 @@ export function FaqAccordion({ items }: { items: readonly { q: string; a: string
               >
                 {item.q}
                 <ChevronDown
-                  className={`size-5 shrink-0 text-brand transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+                  className={`size-5 shrink-0 text-brand transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${open ? "rotate-180" : ""}`}
                   aria-hidden="true"
                 />
               </button>
@@ -41,6 +46,6 @@ export function FaqAccordion({ items }: { items: readonly { q: string; a: string
           </div>
         );
       })}
-    </div>
+    </Reveal>
   );
 }
