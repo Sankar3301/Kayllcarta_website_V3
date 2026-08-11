@@ -27,7 +27,7 @@ export function Footer() {
                 <Link
                   to="/services/$slug"
                   params={{ slug: s.slug }}
-                  className="hover:text-surface-foreground"
+                  className="hover:text-surface-foreground transition-colors"
                 >
                   {s.title}
                 </Link>
@@ -40,42 +40,42 @@ export function Footer() {
           <h2 className="text-sm font-bold uppercase tracking-[0.16em] text-brand-soft">Company</h2>
           <ul className="mt-5 space-y-2.5 text-sm text-surface-foreground/70">
             <li>
-              <Link to="/about" className="hover:text-surface-foreground">
+              <Link to="/about" className="hover:text-surface-foreground transition-colors">
                 About
               </Link>
             </li>
             <li>
-              <Link to="/industries" className="hover:text-surface-foreground">
+              <Link to="/industries" className="hover:text-surface-foreground transition-colors">
                 Industries
               </Link>
             </li>
             <li>
-              <Link to="/resources" className="hover:text-surface-foreground">
+              <Link to="/resources" className="hover:text-surface-foreground transition-colors">
                 Resources
               </Link>
             </li>
             <li>
-              <Link to="/faq" className="hover:text-surface-foreground">
+              <Link to="/faq" className="hover:text-surface-foreground transition-colors">
                 FAQ
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="hover:text-surface-foreground">
+              <Link to="/contact" className="hover:text-surface-foreground transition-colors">
                 Contact
               </Link>
             </li>
             <li>
-              <Link to="/privacy" className="hover:text-surface-foreground">
+              <Link to="/privacy" className="hover:text-surface-foreground transition-colors">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link to="/terms" className="hover:text-surface-foreground">
+              <Link to="/terms" className="hover:text-surface-foreground transition-colors">
                 Terms of Use
               </Link>
             </li>
             <li>
-              <Link to="/disclaimer" className="hover:text-surface-foreground">
+              <Link to="/disclaimer" className="hover:text-surface-foreground transition-colors">
                 Disclaimer
               </Link>
             </li>
@@ -95,7 +95,10 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <Phone className="mt-0.5 size-4 shrink-0 text-brand-soft" aria-hidden="true" />
-              <a href={CONTACT.phoneHref} className="hover:text-surface-foreground">
+              <a
+                href={CONTACT.phoneHref}
+                className="hover:text-surface-foreground transition-colors"
+              >
                 {CONTACT.phone}
               </a>
             </li>
@@ -103,7 +106,7 @@ export function Footer() {
               <Mail className="mt-0.5 size-4 shrink-0 text-brand-soft" aria-hidden="true" />
               <a
                 href={`mailto:${CONTACT.email}`}
-                className="break-all hover:text-surface-foreground"
+                className="break-all transition-colors hover:text-surface-foreground"
               >
                 {CONTACT.email}
               </a>

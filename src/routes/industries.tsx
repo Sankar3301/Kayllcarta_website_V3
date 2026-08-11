@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { Footer } from "@/components/site/Footer";
 import { CtaBand } from "@/components/site/CtaBand";
+import { Reveal } from "@/components/site/Reveal";
 import { industries } from "@/components/site/site-data";
 import { absoluteUrl } from "@/lib/site-url";
 
@@ -41,20 +42,24 @@ function IndustriesPage() {
 
       <section className="mx-auto max-w-[1240px] px-5 py-20 md:px-8 md:py-24">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {industries.map(({ icon: Icon, title, body }) => (
-            <div key={title} className="rounded-2xl border border-border bg-card p-8">
-              <span className="inline-flex size-12 items-center justify-center rounded-xl bg-accent text-accent-foreground">
-                <Icon className="size-6" aria-hidden="true" />
-              </span>
-              <h2 className="mt-6 text-xl">{title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
-            </div>
+          {industries.map(({ icon: Icon, title, body }, i) => (
+            <Reveal key={title} delay={i * 70} duration={500}>
+              <div className="group rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft">
+                <span className="inline-flex size-12 items-center justify-center rounded-xl bg-accent text-accent-foreground transition-transform duration-300 group-hover:scale-110">
+                  <Icon className="size-6" aria-hidden="true" />
+                </span>
+                <h2 className="mt-6 text-xl">{title}</h2>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
-        <p className="mt-12 max-w-3xl rounded-xl border border-border bg-secondary/60 p-6 text-sm text-muted-foreground">
-          Industry support is provided subject to the services Kaycarta offers and the agreed
-          engagement. Information on this page is general in nature.
-        </p>
+        <Reveal delay={100}>
+          <p className="mt-12 max-w-3xl rounded-xl border border-border bg-secondary/60 p-6 text-sm text-muted-foreground">
+            Industry support is provided subject to the services Kaycarta offers and the agreed
+            engagement. Information on this page is general in nature.
+          </p>
+        </Reveal>
       </section>
 
       <CtaBand />

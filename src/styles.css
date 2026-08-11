@@ -204,3 +204,59 @@
     );
   background-size: 72px 72px;
 }
+
+/* Tinted shadows: same warm-charcoal hue as --foreground instead of flat
+   Tailwind black, so elevation reads as part of this palette rather than a
+   generic default. Same visual weight as shadow-lg/shadow-2xl. */
+@utility shadow-soft {
+  box-shadow:
+    0 1px 2px color-mix(in oklab, var(--foreground) 6%, transparent),
+    0 12px 24px -8px color-mix(in oklab, var(--foreground) 16%, transparent);
+}
+
+@utility shadow-soft-lg {
+  box-shadow:
+    0 2px 4px color-mix(in oklab, var(--foreground) 8%, transparent),
+    0 28px 48px -12px color-mix(in oklab, var(--foreground) 24%, transparent);
+}
+
+@keyframes kaycarta-ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}
+
+@utility animate-ken-burns {
+  animation: kaycarta-ken-burns 18s ease-out forwards;
+}
+
+@keyframes kaycarta-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@utility animate-pop-in {
+  animation: kaycarta-pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes kaycarta-draw-underline {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@utility animate-draw-underline {
+  animation: kaycarta-draw-underline 0.3s ease-out both;
+}

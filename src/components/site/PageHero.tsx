@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 
 import { Nav } from "./Nav";
+import { Reveal } from "./Reveal";
 
 export function PageHero({
   eyebrow,
@@ -23,20 +24,31 @@ export function PageHero({
           aria-hidden="true"
         />
         <div className="relative mx-auto max-w-[1240px] px-5 py-20 md:px-8 md:py-24">
-          <p className="eyebrow text-brand-soft">
-            <span className="h-px w-8 bg-brand-soft" aria-hidden="true" />
-            {eyebrow}
-          </p>
-          <h1 className="mt-5 max-w-3xl text-4xl leading-[1.1] sm:text-5xl">{title}</h1>
-          <p className="mt-6 max-w-2xl text-lg text-surface-foreground/75">{intro}</p>
-          {children ?? (
-            <Link
-              to="/contact"
-              className="mt-9 inline-flex rounded-lg bg-brand px-6 py-3.5 text-sm font-semibold text-brand-foreground transition-colors hover:bg-brand-soft"
-            >
-              Book a Consultation
-            </Link>
-          )}
+          <Reveal variant="up" duration={500}>
+            <p className="eyebrow text-brand-soft">
+              <span
+                className="h-px w-8 origin-left animate-draw-underline bg-brand-soft"
+                aria-hidden="true"
+              />
+              {eyebrow}
+            </p>
+          </Reveal>
+          <Reveal variant="up" delay={100} duration={500}>
+            <h1 className="mt-5 max-w-3xl text-4xl leading-[1.1] sm:text-5xl">{title}</h1>
+          </Reveal>
+          <Reveal variant="up" delay={200} duration={500}>
+            <p className="mt-6 max-w-2xl text-lg text-surface-foreground/75">{intro}</p>
+          </Reveal>
+          <Reveal variant="up" delay={300} duration={500}>
+            {children ?? (
+              <Link
+                to="/contact"
+                className="mt-9 inline-flex rounded-lg bg-brand px-6 py-3.5 text-sm font-semibold text-brand-foreground transition-colors hover:bg-brand-soft"
+              >
+                Book a Consultation
+              </Link>
+            )}
+          </Reveal>
         </div>
       </section>
     </div>
