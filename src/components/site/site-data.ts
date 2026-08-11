@@ -14,7 +14,7 @@ export const CONTACT = {
   postal: "PO Box 530, Thomastown VIC 3074",
   phone: "03 9464 1144",
   phoneHref: "tel:+61394641144",
-  email: "prathyusha@kaycarta.com.au",
+  email: "info@kaycarta.com.au",
   hours: ["Monday – Friday: 9:00am – 5:30pm", "Saturday: by appointment", "Sunday: closed"],
 } as const;
 

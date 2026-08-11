@@ -45,7 +45,7 @@ export const Route = createFileRoute("/")({
           url: absoluteUrl("/"),
           image: absoluteUrl("/og-image.jpg"),
           telephone: "+61 3 9464 1144",
-          email: "prathyusha@kaycarta.com.au",
+          email: "info@kaycarta.com.au",
           priceRange: "$$",
           address: {
             "@type": "PostalAddress",

@@ -11,7 +11,6 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { BackToTop } from "@/components/site/BackToTop";
 import { absoluteUrl } from "@/lib/site-url";
 
@@ -147,7 +146,6 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
-      <WhatsAppButton />
       <BackToTop />
     </QueryClientProvider>
   );

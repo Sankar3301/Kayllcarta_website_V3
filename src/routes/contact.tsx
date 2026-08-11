@@ -15,7 +15,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contact Kaycarta Accountants: Level 1, 179 B High Street Thomastown VIC 3074, phone 03 9464 1144, email prathyusha@kaycarta.com.au.",
+          "Contact Kaycarta Accountants: Level 1, 179 B High Street Thomastown VIC 3074, phone 03 9464 1144, email info@kaycarta.com.au.",
       },
       { property: "og:title", content: "Contact Kaycarta Accountants | Thomastown, Victoria" },
       {
