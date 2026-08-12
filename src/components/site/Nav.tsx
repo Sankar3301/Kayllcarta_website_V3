@@ -92,7 +92,7 @@ export function Nav() {
                 aria-controls="nav-services-menu"
                 onClick={() => setServicesOpen((v) => !v)}
                 onMouseEnter={() => setServicesOpen(true)}
-                className="inline-flex items-center gap-1 rounded-md px-3.5 py-2 text-sm font-semibold text-foreground/75 transition-colors hover:bg-secondary hover:text-foreground"
+                className="inline-flex items-center gap-1 rounded-md px-3.5 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-secondary hover:text-foreground"
               >
                 Services
                 <ChevronDown className="size-3.5" aria-hidden="true" />
@@ -115,7 +115,7 @@ export function Nav() {
                       to="/services/$slug"
                       params={{ slug: s.slug }}
                       onClick={() => setServicesOpen(false)}
-                      className="block rounded-lg px-3 py-2 text-sm text-foreground/75 hover:bg-secondary hover:text-foreground"
+                      className="block rounded-lg px-3 py-2 text-sm text-foreground hover:bg-secondary"
                     >
                       {s.title}
                     </Link>
@@ -189,7 +189,7 @@ export function Nav() {
                           to="/services/$slug"
                           params={{ slug: s.slug }}
                           onClick={() => setOpen(false)}
-                          className="block rounded-lg px-3 py-2 text-sm text-foreground/75"
+                          className="block rounded-lg px-3 py-2 text-sm text-foreground"
                         >
                           {s.title}
                         </Link>
@@ -222,7 +222,7 @@ function NavItem({ to, label, exact }: { to: string; label: string; exact?: bool
       to={to}
       activeOptions={{ exact: Boolean(exact) }}
       activeProps={{ className: "text-foreground [&>span]:scale-x-100", "aria-current": "page" }}
-      className="group relative rounded-md px-3.5 py-2 text-sm font-semibold text-foreground/75 transition-colors hover:text-foreground"
+      className="group relative rounded-md px-3.5 py-2 text-sm font-semibold text-foreground transition-colors hover:text-foreground"
     >
       {label}
       <span
@@ -251,7 +251,7 @@ function MobileItem({
         onClick={onDone}
         activeOptions={{ exact: Boolean(exact) }}
         activeProps={{ className: "text-brand", "aria-current": "page" }}
-        className="block rounded-lg px-3 py-3 text-base font-semibold"
+        className="block rounded-lg px-3 py-3 text-base font-semibold text-foreground"
       >
         {label}
       </Link>
