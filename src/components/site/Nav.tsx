@@ -1,23 +1,19 @@
 import { useEffect, useState } from "react";
-import { ChevronDown, MapPin, Menu, Phone, X } from "lucide-react";
+import { MapPin, Menu, Phone, X } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
 import { Logo } from "./Logo";
-import { services } from "./services-data";
 import { CONTACT } from "./site-data";
 
 const mainLinks = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { label: "Industries", to: "/industries" },
-  { label: "Resources", to: "/resources" },
-  { label: "FAQ", to: "/faq" },
+  { label: "Services", to: "/services" },
   { label: "Contact", to: "/contact" },
 ] as const;
 
 export function Nav() {
   const [open, setOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -38,18 +34,17 @@ export function Nav() {
     };
   }, [open]);
 
-  // Let Escape close whichever of the mobile menu / services dropdown is open.
+  // Let Escape close the mobile menu.
   useEffect(() => {
-    if (!open && !servicesOpen) return;
+    if (!open) return;
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setOpen(false);
-        setServicesOpen(false);
       }
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [open, servicesOpen]);
+  }, [open]);
 
   return (
     <div className="sticky top-0 z-40">
@@ -80,52 +75,8 @@ export function Nav() {
           </Link>
 
           <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
-            {mainLinks.slice(0, 2).map((l) => (
+            {mainLinks.map((l) => (
               <NavItem key={l.to} to={l.to} label={l.label} exact={l.to === "/"} />
-            ))}
-
-            <div className="relative" onMouseLeave={() => setServicesOpen(false)}>
-              <button
-                type="button"
-                aria-expanded={servicesOpen}
-                aria-haspopup="true"
-                aria-controls="nav-services-menu"
-                onClick={() => setServicesOpen((v) => !v)}
-                onMouseEnter={() => setServicesOpen(true)}
-                className="inline-flex items-center gap-1 rounded-md px-3.5 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-secondary hover:text-foreground"
-              >
-                Services
-                <ChevronDown className="size-3.5" aria-hidden="true" />
-              </button>
-              {servicesOpen ? (
-                <div
-                  id="nav-services-menu"
-                  className="absolute left-0 top-full w-72 rounded-xl border border-border bg-card p-2 shadow-lg"
-                >
-                  <Link
-                    to="/services"
-                    onClick={() => setServicesOpen(false)}
-                    className="block rounded-lg px-3 py-2 text-sm font-semibold hover:bg-secondary"
-                  >
-                    All services
-                  </Link>
-                  {services.map((s) => (
-                    <Link
-                      key={s.slug}
-                      to="/services/$slug"
-                      params={{ slug: s.slug }}
-                      onClick={() => setServicesOpen(false)}
-                      className="block rounded-lg px-3 py-2 text-sm text-foreground hover:bg-secondary"
-                    >
-                      {s.title}
-                    </Link>
-                  ))}
-                </div>
-              ) : null}
-            </div>
-
-            {mainLinks.slice(2).map((l) => (
-              <NavItem key={l.to} to={l.to} label={l.label} />
             ))}
           </nav>
 
@@ -165,7 +116,7 @@ export function Nav() {
               }`}
             >
               <ul className="flex flex-col">
-                {mainLinks.slice(0, 2).map((l) => (
+                {mainLinks.map((l) => (
                   <MobileItem
                     key={l.to}
                     to={l.to}
@@ -173,32 +124,6 @@ export function Nav() {
                     exact={l.to === "/"}
                     onDone={() => setOpen(false)}
                   />
-                ))}
-                <li className="py-1">
-                  <Link
-                    to="/services"
-                    onClick={() => setOpen(false)}
-                    className="block rounded-lg px-3 py-3 text-base font-semibold"
-                  >
-                    Services
-                  </Link>
-                  <ul className="ml-3 border-l border-border pl-3">
-                    {services.map((s) => (
-                      <li key={s.slug}>
-                        <Link
-                          to="/services/$slug"
-                          params={{ slug: s.slug }}
-                          onClick={() => setOpen(false)}
-                          className="block rounded-lg px-3 py-2 text-sm text-foreground"
-                        >
-                          {s.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-                {mainLinks.slice(2).map((l) => (
-                  <MobileItem key={l.to} to={l.to} label={l.label} onDone={() => setOpen(false)} />
                 ))}
               </ul>
               <Link

@@ -173,22 +173,6 @@ function HomePage() {
                   </Link>
                 </div>
               </Reveal>
-              <Reveal variant="up" delay={400} duration={500}>
-                <dl className="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-surface-foreground/15 pt-8">
-                  {[
-                    ["Registered", "Tax Agent"],
-                    ["Member", "of IPA"],
-                    ["Fellow", "NTAA"],
-                  ].map(([a, b]) => (
-                    <div key={a}>
-                      <dt className="text-xs uppercase tracking-[0.16em] text-surface-foreground/55">
-                        {a}
-                      </dt>
-                      <dd className="mt-1 font-display text-lg font-bold">{b}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </Reveal>
             </div>
           </div>
         </section>
