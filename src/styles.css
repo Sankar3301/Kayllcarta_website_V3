@@ -221,21 +221,26 @@
 }
 
 /* Gradient buttons: built from the site's own tokens (brand + surface),
-   not a new hue — see PR notes. bg-gradient-brand/-surface for the resting
-   state, the "-strong" pair for hover (used as e.g. hover:bg-gradient-brand-strong;
-   Tailwind generates the hover selector automatically for any @utility). */
+   not a new hue — see PR notes. The first version of these mixed brand
+   with brand-soft only, which are both low-chroma and close in lightness,
+   so the gradient was nearly invisible on a button (verified by rendering
+   both side by side). This version widens the range by mixing toward
+   black/white at the same hue, which is clearly visible while staying in
+   the same color family — no new hue introduced anywhere here. */
 @utility bg-gradient-brand {
   background-image: linear-gradient(
     135deg,
-    var(--brand) 0%,
-    color-mix(in oklab, var(--brand) 55%, var(--brand-soft)) 100%
+    color-mix(in oklab, var(--brand) 78%, black) 0%,
+    var(--brand) 55%,
+    var(--brand-soft) 100%
   );
 }
 
 @utility bg-gradient-brand-strong {
   background-image: linear-gradient(
     135deg,
-    color-mix(in oklab, var(--brand) 85%, var(--surface)) 0%,
+    color-mix(in oklab, var(--brand) 62%, black) 0%,
+    color-mix(in oklab, var(--brand) 88%, black) 50%,
     var(--brand) 100%
   );
 }
@@ -244,34 +249,35 @@
   background-image: linear-gradient(
     135deg,
     var(--surface) 0%,
-    color-mix(in oklab, var(--surface) 60%, var(--brand)) 100%
+    color-mix(in oklab, var(--surface) 45%, var(--brand)) 100%
   );
 }
 
 @utility bg-gradient-surface-strong {
   background-image: linear-gradient(
     135deg,
-    color-mix(in oklab, var(--surface) 80%, var(--brand)) 0%,
-    color-mix(in oklab, var(--surface) 40%, var(--brand)) 100%
+    color-mix(in oklab, var(--surface) 90%, black) 0%,
+    color-mix(in oklab, var(--surface) 25%, var(--brand)) 100%
   );
 }
 
 /* For outline/ghost buttons: uses currentColor so it works against any text
    color (dark hero overlay, brand-colored band, or a light card) without a
-   separate utility per context. */
+   separate utility per context. Alpha range widened for the same reason as
+   above — 16%→4% read as basically flat, 32%→6% actually shows as glass. */
 @utility bg-gradient-ghost {
   background-image: linear-gradient(
     135deg,
-    color-mix(in oklab, currentColor 16%, transparent) 0%,
-    color-mix(in oklab, currentColor 4%, transparent) 100%
+    color-mix(in oklab, currentColor 32%, transparent) 0%,
+    color-mix(in oklab, currentColor 6%, transparent) 100%
   );
 }
 
 @utility bg-gradient-ghost-strong {
   background-image: linear-gradient(
     135deg,
-    color-mix(in oklab, currentColor 24%, transparent) 0%,
-    color-mix(in oklab, currentColor 8%, transparent) 100%
+    color-mix(in oklab, currentColor 44%, transparent) 0%,
+    color-mix(in oklab, currentColor 12%, transparent) 100%
   );
 }
 @keyframes kaycarta-ken-burns {
