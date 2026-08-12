@@ -141,7 +141,7 @@ function ServiceDetailPage() {
             </Link>
             <a
               href={CONTACT.phoneHref}
-              className="mt-3 flex items-center justify-center gap-2 rounded-lg border border-border px-5 py-3.5 text-sm font-semibold"
+              className="mt-3 flex items-center justify-center gap-2 rounded-lg border border-border bg-gradient-ghost px-5 py-3.5 text-sm font-semibold transition-colors hover:bg-gradient-ghost-strong"
             >
               <Phone className="size-4" aria-hidden="true" />
               {CONTACT.phone}

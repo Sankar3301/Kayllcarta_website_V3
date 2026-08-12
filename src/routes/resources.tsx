@@ -71,7 +71,7 @@ function ResourcesPage() {
 
         <div key={active} className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((a, i) => (
-            <Reveal key={a.title} delay={Math.min(i, 6) * 60} duration={450}>
+            <Reveal key={a.title} delay={Math.min(i, 6) * 60} duration={450} className="h-full">
               <article className="flex h-full flex-col rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft">
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">
                   {a.category}

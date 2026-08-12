@@ -116,7 +116,7 @@ function HomePage() {
             src={heroOffice}
             alt="Kaycarta Accountants office in Thomastown, Melbourne"
             width={1920}
-            height={1080}
+            height={1088}
             className="absolute inset-0 -z-20 h-full w-full animate-ken-burns object-cover"
           />
           {/* Scrim: blends the photo into the surface color so overlaid text stays
@@ -167,7 +167,7 @@ function HomePage() {
                   </Link>
                   <Link
                     to="/services"
-                    className="inline-flex items-center gap-2 rounded-lg border border-surface-foreground/25 bg-surface-foreground/10 px-6 py-4 text-sm font-semibold backdrop-blur-sm transition-colors hover:bg-surface-foreground/15"
+                    className="inline-flex items-center gap-2 rounded-lg border border-surface-foreground/25 bg-gradient-ghost px-6 py-4 text-sm font-semibold backdrop-blur-sm transition-colors hover:bg-gradient-ghost-strong"
                   >
                     Explore our services
                   </Link>
@@ -240,7 +240,7 @@ function HomePage() {
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {services.map(({ icon: Icon, title, body, slug }, i) => (
-              <Reveal key={slug} delay={i * 90} duration={500}>
+              <Reveal key={slug} delay={i * 90} duration={500} className="h-full">
                 <Link
                   to="/services/$slug"
                   params={{ slug }}
@@ -299,14 +299,14 @@ function HomePage() {
             ["Organised process", "Structured engagements so nothing is left uncertain."],
             ["Long-term relationships", "Support that continues beyond a single lodgement."],
           ].map(([title, body], i) => (
-            <Reveal key={title} delay={i * 90} duration={500}>
-              <div className="group rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft">
+            <Reveal key={title} delay={i * 90} duration={500} className="h-full">
+              <div className="group flex h-full flex-col rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft">
                 <Check
                   className="size-5 text-brand transition-transform duration-300 group-hover:scale-110"
                   aria-hidden="true"
                 />
                 <h3 className="mt-4 text-lg">{title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
               </div>
             </Reveal>
           ))}
@@ -353,14 +353,14 @@ function HomePage() {
         </Reveal>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {industries.slice(0, 6).map(({ icon: Icon, title, body }, i) => (
-            <Reveal key={title} delay={i * 80} duration={500}>
-              <div className="group rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft">
+            <Reveal key={title} delay={i * 80} duration={500} className="h-full">
+              <div className="group flex h-full flex-col rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft">
                 <Icon
                   className="size-5 text-brand transition-transform duration-300 group-hover:scale-110"
                   aria-hidden="true"
                 />
                 <h3 className="mt-4 text-lg">{title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
               </div>
             </Reveal>
           ))}

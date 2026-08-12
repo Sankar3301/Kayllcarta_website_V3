@@ -31,7 +31,7 @@ export function CtaBand({
           </Link>
           <a
             href={CONTACT.phoneHref}
-            className="inline-flex items-center gap-2 rounded-lg border border-brand-foreground/40 px-6 py-3.5 text-sm font-semibold transition-colors hover:bg-brand-foreground/10"
+            className="inline-flex items-center gap-2 rounded-lg border border-brand-foreground/40 bg-gradient-ghost px-6 py-3.5 text-sm font-semibold transition-colors hover:bg-gradient-ghost-strong"
           >
             <Phone className="size-4" aria-hidden="true" />
             {CONTACT.phone}
