@@ -101,7 +101,11 @@ export function ContactForm() {
 
   if (sent) {
     return (
-      <div className="rounded-2xl border border-border bg-card p-8">
+      <div
+        role="status"
+        aria-live="polite"
+        className="rounded-2xl border border-border bg-card p-8"
+      >
         <CheckCircle2 className="size-8 text-brand" aria-hidden="true" />
         <h2 className="mt-4 text-2xl">
           {sent === "sent" ? "Your enquiry has been sent" : "Your email is ready to send"}
@@ -130,7 +134,7 @@ export function ContactForm() {
             setValues(empty);
             setSent(false);
           }}
-          className="mt-6 inline-flex rounded-lg border border-input px-5 py-3 text-sm font-semibold"
+          className="mt-6 inline-flex rounded-lg border border-input bg-gradient-ghost px-5 py-3 text-sm font-semibold transition-colors hover:bg-gradient-ghost-strong"
         >
           Send another enquiry
         </button>

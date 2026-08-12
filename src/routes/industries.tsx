@@ -43,13 +43,13 @@ function IndustriesPage() {
       <section className="mx-auto max-w-[1240px] px-5 py-20 md:px-8 md:py-24">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map(({ icon: Icon, title, body }, i) => (
-            <Reveal key={title} delay={i * 70} duration={500}>
-              <div className="group rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft">
+            <Reveal key={title} delay={i * 70} duration={500} className="h-full">
+              <div className="group flex h-full flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft">
                 <span className="inline-flex size-12 items-center justify-center rounded-xl bg-accent text-accent-foreground transition-transform duration-300 group-hover:scale-110">
                   <Icon className="size-6" aria-hidden="true" />
                 </span>
                 <h2 className="mt-6 text-xl">{title}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
               </div>
             </Reveal>
           ))}

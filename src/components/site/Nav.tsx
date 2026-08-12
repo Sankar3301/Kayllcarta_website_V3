@@ -27,6 +27,30 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock background scroll while the mobile menu is open, so the page
+  // behind it doesn't scroll along with it.
+  useEffect(() => {
+    if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [open]);
+
+  // Let Escape close whichever of the mobile menu / services dropdown is open.
+  useEffect(() => {
+    if (!open && !servicesOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        setServicesOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open, servicesOpen]);
+
   return (
     <div className="sticky top-0 z-40">
       <div className="hidden bg-surface text-surface-foreground/80 md:block">
@@ -64,6 +88,8 @@ export function Nav() {
               <button
                 type="button"
                 aria-expanded={servicesOpen}
+                aria-haspopup="true"
+                aria-controls="nav-services-menu"
                 onClick={() => setServicesOpen((v) => !v)}
                 onMouseEnter={() => setServicesOpen(true)}
                 className="inline-flex items-center gap-1 rounded-md px-3.5 py-2 text-sm font-semibold text-foreground/75 transition-colors hover:bg-secondary hover:text-foreground"
@@ -72,7 +98,10 @@ export function Nav() {
                 <ChevronDown className="size-3.5" aria-hidden="true" />
               </button>
               {servicesOpen ? (
-                <div className="absolute left-0 top-full w-72 rounded-xl border border-border bg-card p-2 shadow-lg">
+                <div
+                  id="nav-services-menu"
+                  className="absolute left-0 top-full w-72 rounded-xl border border-border bg-card p-2 shadow-lg"
+                >
                   <Link
                     to="/services"
                     onClick={() => setServicesOpen(false)}
@@ -192,7 +221,7 @@ function NavItem({ to, label, exact }: { to: string; label: string; exact?: bool
     <Link
       to={to}
       activeOptions={{ exact: Boolean(exact) }}
-      activeProps={{ className: "text-foreground [&>span]:scale-x-100" }}
+      activeProps={{ className: "text-foreground [&>span]:scale-x-100", "aria-current": "page" }}
       className="group relative rounded-md px-3.5 py-2 text-sm font-semibold text-foreground/75 transition-colors hover:text-foreground"
     >
       {label}
@@ -221,7 +250,7 @@ function MobileItem({
         to={to}
         onClick={onDone}
         activeOptions={{ exact: Boolean(exact) }}
-        activeProps={{ className: "text-brand" }}
+        activeProps={{ className: "text-brand", "aria-current": "page" }}
         className="block rounded-lg px-3 py-3 text-base font-semibold"
       >
         {label}

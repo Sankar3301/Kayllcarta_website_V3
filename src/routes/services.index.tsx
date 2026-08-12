@@ -44,7 +44,7 @@ function ServicesPage() {
       <section className="mx-auto max-w-[1240px] px-5 py-20 md:px-8 md:py-24">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map(({ icon: Icon, title, body, slug }, i) => (
-            <Reveal key={slug} delay={i * 80} duration={500}>
+            <Reveal key={slug} delay={i * 80} duration={500} className="h-full">
               <div className="group flex h-full flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand/50 hover:shadow-soft">
                 <span className="inline-flex size-12 items-center justify-center rounded-xl bg-accent text-accent-foreground transition-all duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-brand-foreground">
                   <Icon className="size-6" aria-hidden="true" />

@@ -141,10 +141,12 @@ function AboutPage() {
         </Reveal>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {values.map((v, i) => (
-            <Reveal key={v.title} delay={i * 90} duration={500}>
-              <div className="rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft">
+            <Reveal key={v.title} delay={i * 90} duration={500} className="h-full">
+              <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft">
                 <h3 className="text-lg">{v.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{v.body}</p>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {v.body}
+                </p>
               </div>
             </Reveal>
           ))}
