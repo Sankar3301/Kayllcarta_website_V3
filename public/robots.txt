@@ -10,6 +10,36 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# AI/GEO crawlers — explicitly allowed so ChatGPT, Perplexity, Claude and
+# Google AI Overviews can read and cite this site when answering queries
+# about Kaycarta Accountants or accounting services in Thomastown/Melbourne.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 User-agent: *
 Allow: /
 

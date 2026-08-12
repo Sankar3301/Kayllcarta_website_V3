@@ -102,31 +102,35 @@ export const resourceArticles = [
 export const faqs = [
   {
     q: "What services does Kaycarta provide?",
-    a: "Kaycarta provides accounting, taxation and related business support services. The exact services available depend on the client's circumstances and agreed engagement.",
+    a: "Kaycarta provides tax and accounting, business setup, bookkeeping, ASIC and corporate compliance, SMSF administration, and tax planning and advisory services. The firm is led by a Registered Tax Agent and works with individuals, sole traders and companies from its Thomastown office.",
   },
   {
     q: "Can Kaycarta help with individual tax returns?",
-    a: "Yes, subject to the firm's engagement terms and the nature of the client's tax affairs.",
+    a: "Yes. Kaycarta prepares individual tax returns as part of its tax and accounting service, including reviewing deductions and lodging with the ATO. Book a consultation to discuss your specific tax position.",
   },
   {
     q: "Can you help me start a business?",
-    a: "Kaycarta can assist with accounting and tax considerations involved in setting up a business, subject to the services offered.",
+    a: "Yes. Kaycarta's business setup service covers choosing a structure (sole trader, company or trust), ABN and business registrations, and the accounting and tax considerations of launching a new business.",
   },
   {
     q: "Do you provide bookkeeping?",
-    a: "Bookkeeping support can be provided where included in the engagement.",
+    a: "Yes. Kaycarta offers ongoing bookkeeping support, including day-to-day transaction recording and keeping your accounts ready for tax time and business decisions, as part of a client engagement.",
   },
   {
     q: "Can you help with business tax planning?",
-    a: "Kaycarta can discuss relevant tax considerations and planning options within the scope of its professional services.",
+    a: "Yes. Kaycarta provides tax planning and advisory services throughout the year, not just at tax time, helping clients understand upcoming obligations and plan ahead rather than react at deadline.",
   },
   {
     q: "How do I make an appointment?",
-    a: "Use the contact form or call the office on 03 9464 1144.",
+    a: "Call 03 9464 1144, use the contact form on this site, or email info@kaycarta.com.au. Kaycarta's Thomastown office is open Monday to Friday, 9:00am–5:30pm, and Saturday by appointment.",
+  },
+  {
+    q: "Is Kaycarta Accountants a Registered Tax Agent?",
+    a: "Yes. Kaycarta Accountants is led by a Registered Tax Agent and Member of the Institute of Public Accountants (IPA), based at Level 1, 179 B High Street, Thomastown, Victoria. See the About page for full credentials.",
   },
   {
     q: "Where is Kaycarta located?",
-    a: "Kaycarta's business card lists Level 1, 179 B High Street, Thomastown, Victoria 3074, with a postal address of PO Box 530, Thomastown, Victoria 3074.",
+    a: "Kaycarta Accountants is located at Level 1, 179 B High Street, Thomastown, Victoria 3074, serving clients across Thomastown and greater Melbourne. Postal address: PO Box 530, Thomastown, Victoria 3074.",
   },
 ] as const;
 
