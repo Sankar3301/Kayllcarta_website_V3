@@ -11,7 +11,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-[1240px] gap-12 px-5 py-16 md:grid-cols-2 md:px-8 lg:grid-cols-4">
         <div>
           <Logo tone="light" withTagline />
-          <p className="mt-6 text-sm leading-relaxed text-surface-foreground/70">
+          <p className="mt-6 text-sm leading-relaxed text-surface-foreground/85">
             Accounting, taxation and advisory support for individuals and businesses in Thomastown
             and across Melbourne.
           </p>
@@ -21,7 +21,7 @@ export function Footer() {
           <h2 className="text-sm font-bold uppercase tracking-[0.16em] text-brand-soft">
             Services
           </h2>
-          <ul className="mt-5 space-y-2.5 text-sm text-surface-foreground/70">
+          <ul className="mt-5 space-y-2.5 text-sm text-surface-foreground/85">
             {services.map((s) => (
               <li key={s.slug}>
                 <Link
@@ -38,7 +38,7 @@ export function Footer() {
 
         <nav aria-label="Company">
           <h2 className="text-sm font-bold uppercase tracking-[0.16em] text-brand-soft">Company</h2>
-          <ul className="mt-5 space-y-2.5 text-sm text-surface-foreground/70">
+          <ul className="mt-5 space-y-2.5 text-sm text-surface-foreground/85">
             <li>
               <Link to="/about" className="hover:text-surface-foreground transition-colors">
                 About
@@ -84,7 +84,7 @@ export function Footer() {
 
         <div>
           <h2 className="text-sm font-bold uppercase tracking-[0.16em] text-brand-soft">Contact</h2>
-          <ul className="mt-5 space-y-4 text-sm text-surface-foreground/70">
+          <ul className="mt-5 space-y-4 text-sm text-surface-foreground/85">
             <li className="flex gap-3">
               <MapPin className="mt-0.5 size-4 shrink-0 text-brand-soft" aria-hidden="true" />
               <span>
@@ -116,7 +116,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-surface-foreground/12">
-        <div className="mx-auto flex max-w-[1240px] flex-col gap-3 px-5 py-6 text-xs text-surface-foreground/55 md:flex-row md:items-center md:justify-between md:px-8">
+        <div className="mx-auto flex max-w-[1240px] flex-col gap-3 px-5 py-6 text-xs text-surface-foreground/70 md:flex-row md:items-center md:justify-between md:px-8">
           <p>© {new Date().getFullYear()} Kaycarta Accountants. All rights reserved.</p>
           <p>
             Information on this website is general in nature and does not constitute personal

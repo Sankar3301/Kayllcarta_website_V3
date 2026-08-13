@@ -151,7 +151,7 @@ function HomePage() {
                 </h1>
               </Reveal>
               <Reveal variant="up" delay={200} duration={500}>
-                <p className="mt-6 max-w-xl text-lg text-surface-foreground/75">
+                <p className="mt-6 max-w-xl text-lg text-surface-foreground/85">
                   Kaycarta Accountants provides accounting, taxation and advisory support designed
                   to help you understand your obligations and make informed financial decisions.
                 </p>
@@ -318,7 +318,7 @@ function HomePage() {
               >
                 <span className="font-display text-sm font-bold text-brand-soft">0{i + 1}</span>
                 <h3 className="mt-3 text-base">{step.title}</h3>
-                <p className="mt-2 text-sm text-surface-foreground/70">{step.detail}</p>
+                <p className="mt-2 text-sm text-surface-foreground/82">{step.detail}</p>
               </Reveal>
             ))}
           </ol>

@@ -68,23 +68,26 @@
   --card-foreground: oklch(0.256 0.006 265);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.256 0.006 265);
-  /* Muted Sage #7F8A7C */
-  --primary: oklch(0.588 0.021 138);
+  /* Muted Sage #7F8A7C — darkened from the original for contrast (was
+     failing WCAG AA for white button text: 4.11:1; now 5.23:1) */
+  --primary: oklch(0.53 0.021 138);
   --primary-foreground: oklch(1 0 0);
   /* Soft Grey #E7E8E5 */
   --secondary: oklch(0.925 0.004 120);
   --secondary-foreground: oklch(0.256 0.006 265);
   --muted: oklch(0.937 0.004 110);
-  --muted-foreground: oklch(0.487 0.008 265);
+  /* darkened for contrast: was 5.75:1 on background, now 8.35:1 */
+  --muted-foreground: oklch(0.4 0.008 265);
   --accent: oklch(0.925 0.008 138);
   --accent-foreground: oklch(0.33 0.018 138);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.9 0.004 120);
-  --input: oklch(0.9 0.004 120);
-  --ring: oklch(0.588 0.021 138);
+  /* darkened for contrast: borders were nearly invisible at 1.22:1, now 2.42:1 */
+  --border: oklch(0.7 0.004 120);
+  --input: oklch(0.7 0.004 120);
+  --ring: oklch(0.53 0.021 138);
 
-  --brand: oklch(0.588 0.021 138);
+  --brand: oklch(0.53 0.021 138);
   --brand-foreground: oklch(1 0 0);
   --brand-soft: oklch(0.7 0.018 138);
   /* Warm Sand #B8A47A */

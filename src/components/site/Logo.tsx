@@ -8,7 +8,7 @@ type LogoProps = {
 /** Kaycarta wordmark: kay | two rising bars | carta, with "accountants" rule beneath. */
 export function Logo({ tone = "dark", withTagline = false, className = "" }: LogoProps) {
   const word = tone === "light" ? "text-surface-foreground" : "text-foreground";
-  const sub = tone === "light" ? "text-surface-foreground/70" : "text-foreground/60";
+  const sub = tone === "light" ? "text-surface-foreground/85" : "text-foreground/75";
 
   return (
     <span className={`flex flex-col items-start leading-none ${className}`}>

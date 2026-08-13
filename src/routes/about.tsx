@@ -7,7 +7,6 @@ import { CtaBand } from "@/components/site/CtaBand";
 import { Reveal } from "@/components/site/Reveal";
 import { values } from "@/components/site/site-data";
 import aboutTeam from "@/assets/about-team.jpg";
-import prathyushaAsset from "@/assets/prathyusha.png.asset.json";
 import { absoluteUrl } from "@/lib/site-url";
 
 export const Route = createFileRoute("/about")({
@@ -88,14 +87,39 @@ function AboutPage() {
               delay={0}
               className="rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-soft"
             >
-              <img
-                src={prathyushaAsset.url}
-                alt="Prathyusha Nadempalli, Principal Accountant at Kaycarta Accountants"
-                width={640}
-                height={640}
-                loading="lazy"
-                className="size-40 rounded-2xl object-cover object-top shadow-soft"
-              />
+              <span className="inline-flex size-40 items-center justify-center rounded-2xl bg-accent font-display text-4xl font-bold text-accent-foreground">
+                ES
+              </span>
+              <h3 className="mt-6 text-2xl">Erkan Sahin</h3>
+              <p className="mt-1 text-lg font-semibold text-brand">Senior Accountant</p>
+              <p className="mt-2 text-sm text-muted-foreground">22 years of experience</p>
+              <p className="mt-5 leading-relaxed text-muted-foreground">
+                With 22 years of experience in accounting and business, Erkan Sahin brings extensive
+                knowledge, practical insight, and a genuine passion for helping clients achieve
+                their financial goals.
+              </p>
+              <p className="mt-4 leading-relaxed text-muted-foreground">
+                Erkan is known for his approachable personality and his love of talking with people.
+                He enjoys getting to know his clients, understanding their businesses, and having
+                meaningful conversations about their financial and business needs. His friendly and
+                down-to-earth approach makes clients feel comfortable discussing even complex
+                accounting matters.
+              </p>
+              <p className="mt-4 leading-relaxed text-muted-foreground">
+                At Kaycarta Accountants, Erkan combines his years of experience with a
+                people-focused approach, helping clients navigate their accounting, taxation, and
+                business requirements with confidence.
+              </p>
+            </Reveal>
+
+            <Reveal
+              as="article"
+              delay={120}
+              className="rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-soft"
+            >
+              <span className="inline-flex size-40 items-center justify-center rounded-2xl bg-accent font-display text-4xl font-bold text-accent-foreground">
+                PN
+              </span>
               <h3 className="mt-6 text-2xl">Prathyusha Nadempalli</h3>
               <p className="mt-1 text-lg font-semibold text-brand">
                 Principal Accountant &amp; Registered Tax Agent
@@ -107,24 +131,6 @@ function AboutPage() {
                 Prathyusha leads the practice with experience across tax, compliance and advisory
                 work for individuals, sole traders and companies. She focuses on explaining
                 financial matters clearly so clients can act with confidence.
-              </p>
-            </Reveal>
-
-            <Reveal
-              as="article"
-              delay={120}
-              className="rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-soft"
-            >
-              <span className="inline-flex size-40 items-center justify-center rounded-2xl bg-accent font-display text-4xl font-bold text-accent-foreground">
-                ES
-              </span>
-              <h3 className="mt-6 text-2xl">Erkan Sahin</h3>
-              <p className="mt-1 text-lg font-semibold text-brand">Senior Accountant</p>
-              <p className="mt-2 text-sm text-muted-foreground">21+ years of experience</p>
-              <p className="mt-5 leading-relaxed text-muted-foreground">
-                Erkan brings more than twenty-one years of accounting experience to the team,
-                supporting clients with taxation, compliance and business reporting across a broad
-                range of industries.
               </p>
             </Reveal>
           </div>

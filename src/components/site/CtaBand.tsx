@@ -16,7 +16,7 @@ export function CtaBand({
       <Reveal className="mx-auto flex max-w-[1240px] flex-col gap-8 px-5 py-16 md:flex-row md:items-center md:justify-between md:px-8">
         <div className="max-w-2xl">
           <h2 className="text-3xl sm:text-4xl">{title}</h2>
-          <p className="mt-4 text-brand-foreground/85">{body}</p>
+          <p className="mt-4 text-brand-foreground/95">{body}</p>
         </div>
         <div className="flex flex-wrap gap-3">
           <Link
