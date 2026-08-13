@@ -77,94 +77,87 @@ function AboutPage() {
           <Reveal>
             <p className="eyebrow text-brand">
               <span className="h-px w-8 bg-brand" aria-hidden="true" />
-              Our team
+              Our partners
             </p>
             <h2 className="mt-5 text-3xl sm:text-4xl">Meet the Team</h2>
           </Reveal>
 
-          <Reveal
-            as="article"
-            delay={100}
-            className="mt-12 rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-soft"
-          >
-            <div className="grid gap-8 md:grid-cols-[auto_1fr] md:items-start">
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            <Reveal
+              as="article"
+              delay={0}
+              className="rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-soft"
+            >
               <span className="inline-flex size-40 items-center justify-center rounded-2xl bg-accent font-display text-4xl font-bold text-accent-foreground">
                 ES
               </span>
-              <div>
-                <h3 className="text-2xl">Erkan Sahin</h3>
-                <p className="mt-1 text-lg font-semibold text-brand">Senior Accountant</p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  22 years of experience in accounting and business
-                </p>
-                <p className="mt-5 leading-relaxed text-muted-foreground">
-                  With 22 years of experience in accounting and business, Erkan Sahin brings
-                  extensive knowledge, practical insight, and a genuine passion for helping clients
-                  achieve their financial goals.
-                </p>
-                <p className="mt-4 leading-relaxed text-muted-foreground">
-                  Erkan is known for his approachable personality and his love of talking with
-                  people. He enjoys getting to know his clients, understanding their businesses, and
-                  having meaningful conversations about their financial and business needs. His
-                  friendly and down-to-earth approach makes clients feel comfortable discussing even
-                  complex accounting matters.
-                </p>
-                <p className="mt-4 leading-relaxed text-muted-foreground">
-                  At Kaycarta Accountants, Erkan combines his years of experience with a
-                  people-focused approach, helping clients navigate their accounting, taxation, and
-                  business requirements with confidence.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+              <h3 className="mt-6 text-2xl">Erkan Sahin</h3>
+              <p className="mt-1 text-lg font-semibold text-brand">
+                Director &amp; Senior Accountant
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Principal · 22 years of experience in accounting and business
+              </p>
+              <p className="mt-5 leading-relaxed text-muted-foreground">
+                With 22 years of experience in accounting and business, Erkan Sahin brings extensive
+                knowledge, practical insight, and a genuine passion for helping clients achieve
+                their financial goals.
+              </p>
+              <p className="mt-4 leading-relaxed text-muted-foreground">
+                Erkan is known for his approachable personality and his love of talking with people.
+                He enjoys getting to know his clients, understanding their businesses, and having
+                meaningful conversations about their financial and business needs. His friendly and
+                down-to-earth approach makes clients feel comfortable discussing even complex
+                accounting matters.
+              </p>
+              <p className="mt-4 leading-relaxed text-muted-foreground">
+                At Kaycarta Accountants, Erkan combines his years of experience with a
+                people-focused approach, helping clients navigate their accounting, taxation, and
+                business requirements with confidence.
+              </p>
+            </Reveal>
 
-      <section className="mx-auto max-w-[1240px] px-5 py-20 md:px-8 md:py-24">
-        <Reveal>
-          <p className="eyebrow text-brand">
-            <span className="h-px w-8 bg-brand" aria-hidden="true" />
-            Principal
-          </p>
-          <h2 className="mt-5 text-3xl sm:text-4xl">Meet Prathyusha Nadempalli</h2>
-        </Reveal>
-
-        <div className="mt-12 grid items-start gap-10 md:grid-cols-[auto_1fr]">
-          <Reveal variant="scale" delay={100} duration={600}>
-            <img
-              src={prathyushaImg}
-              alt="Prathyusha Nadempalli, Director and Registered Tax Agent at Kaycarta Accountants"
-              width={640}
-              height={640}
-              loading="lazy"
-              className="size-52 rounded-2xl object-cover object-top shadow-soft-lg"
-            />
-          </Reveal>
-          <Reveal delay={200}>
-            <p className="text-lg font-semibold text-brand">Director &amp; Registered Tax Agent</p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              B.Com (Acc) · MPA · Member of IPA · Fellow NTAA
-            </p>
-            <p className="mt-5 leading-relaxed text-muted-foreground">
-              Prathyusha Nadempalli is the Director and Registered Tax Agent at Kaycarta
-              Accountants, bringing over 14 years of experience across taxation, accounting and
-              business advisory. She holds a Bachelor of Commerce (B.Com), Master of Professional
-              Accounting (MPA), and is a Member of the Institute of Public Accountants (MIPA) and
-              Fellow of the National Tax and Accountants&apos; Association (NTAA).
-            </p>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
-              Prathyusha takes a client-focused approach, helping individuals and businesses manage
-              their financial responsibilities with clarity and confidence. Her experience covers
-              bookkeeping, taxation, tax planning, payroll management and compliance across a
-              diverse range of industries.
-            </p>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
-              Known for her attention to detail and practical approach, Prathyusha works closely
-              with each client to understand their circumstances and provide clear, commercially
-              focused financial guidance. Outside her professional work, she enjoys travelling and
-              exploring new destinations.
-            </p>
-          </Reveal>
+            <Reveal
+              as="article"
+              delay={120}
+              className="rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-soft"
+            >
+              <img
+                src={prathyushaImg}
+                alt="Prathyusha Nadempalli, Director and Registered Tax Agent at Kaycarta Accountants"
+                width={640}
+                height={640}
+                loading="lazy"
+                className="size-40 rounded-2xl object-cover object-top shadow-soft"
+              />
+              <h3 className="mt-6 text-2xl">Prathyusha Nadempalli</h3>
+              <p className="mt-1 text-lg font-semibold text-brand">
+                Director &amp; Registered Tax Agent
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Principal · B.Com (Acc) · MPA · Member of IPA · Fellow NTAA
+              </p>
+              <p className="mt-5 leading-relaxed text-muted-foreground">
+                Prathyusha Nadempalli is the Director and Registered Tax Agent at Kaycarta
+                Accountants, bringing over 14 years of experience across taxation, accounting and
+                business advisory. She holds a Bachelor of Commerce (B.Com), Master of Professional
+                Accounting (MPA), and is a Member of the Institute of Public Accountants (MIPA) and
+                Fellow of the National Tax and Accountants&apos; Association (NTAA).
+              </p>
+              <p className="mt-4 leading-relaxed text-muted-foreground">
+                Prathyusha takes a client-focused approach, helping individuals and businesses
+                manage their financial responsibilities with clarity and confidence. Her experience
+                covers bookkeeping, taxation, tax planning, payroll management and compliance across
+                a diverse range of industries.
+              </p>
+              <p className="mt-4 leading-relaxed text-muted-foreground">
+                Known for her attention to detail and practical approach, Prathyusha works closely
+                with each client to understand their circumstances and provide clear, commercially
+                focused financial guidance. Outside her professional work, she enjoys travelling and
+                exploring new destinations.
+              </p>
+            </Reveal>
+          </div>
         </div>
       </section>
 
