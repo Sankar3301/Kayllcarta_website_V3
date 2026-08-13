@@ -83,7 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Kaycarta Accountants in Thomastown, Melbourne. Tax returns, business setup, bookkeeping, SMSF and advisory led by Prathyusha Nadempalli, Registered Tax Agent.",
+          "Kaycarta Accountants in Thomastown, Melbourne. Tax returns, business setup, bookkeeping, SMSF and advisory led by Prathyusha Nadempalli, Director and Registered Tax Agent.",
       },
       { name: "author", content: "Kaycarta Accountants" },
       { property: "og:title", content: "Kaycarta Accountants | Thomastown, Melbourne" },

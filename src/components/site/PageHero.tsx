@@ -37,7 +37,7 @@ export function PageHero({
             <h1 className="mt-5 max-w-3xl text-4xl leading-[1.1] sm:text-5xl">{title}</h1>
           </Reveal>
           <Reveal variant="up" delay={200} duration={500}>
-            <p className="mt-6 max-w-2xl text-lg text-surface-foreground/75">{intro}</p>
+            <p className="mt-6 max-w-2xl text-lg text-surface-foreground/90">{intro}</p>
           </Reveal>
           <Reveal variant="up" delay={300} duration={500}>
             {children ?? (
