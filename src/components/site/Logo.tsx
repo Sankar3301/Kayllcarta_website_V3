@@ -14,18 +14,18 @@ export function Logo({ tone = "dark", withTagline = false, className = "" }: Log
   return (
     <span className={`flex flex-col items-center leading-none ${className}`}>
       <span className="flex items-end gap-[0.06em]">
-        <span className={`font-display text-[1.55rem] font-bold tracking-[-0.03em] ${word}`}>
+        <span className={`font-display text-[1.75rem] font-bold tracking-[-0.03em] ${word}`}>
           kay
         </span>
         <svg
           viewBox="0 0 26 40"
           aria-hidden="true"
-          className="mx-[0.12em] h-[1.7rem] w-[1.1rem] shrink-0"
+          className="mx-[0.12em] h-[1.92rem] w-[1.24rem] shrink-0"
         >
           <polygon points="2,40 2,14 11,8 11,40" className="fill-brand" />
           <polygon points="14,40 14,8 23,2 23,40" fill="#8A8F94" />
         </svg>
-        <span className={`font-display text-[1.55rem] font-bold tracking-[-0.03em] ${word}`}>
+        <span className={`font-display text-[1.75rem] font-bold tracking-[-0.03em] ${word}`}>
           carta
         </span>
       </span>
