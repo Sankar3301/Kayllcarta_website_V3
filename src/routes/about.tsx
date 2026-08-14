@@ -7,6 +7,7 @@ import { CtaBand } from "@/components/site/CtaBand";
 import { Reveal } from "@/components/site/Reveal";
 import { values } from "@/components/site/site-data";
 import aboutTeam from "@/assets/about-team.jpg";
+import erkanImg from "@/assets/erkan.png";
 import prathyushaImg from "@/assets/prathyusha.png";
 import { absoluteUrl } from "@/lib/site-url";
 
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Kaycarta Accountants in Thomastown, Victoria brings together Erkan Sahin (22 years in accounting and business) and Prathyusha Nadempalli, Director and Registered Tax Agent.",
+          "Kaycarta Accountants in Thomastown, Victoria brings together Erkan Sahin (Senior Accountant, 22+ years) and Prathyusha Nadempalli, Registered Tax Agent.",
       },
       { property: "og:title", content: "About Kaycarta Accountants | Thomastown, Victoria" },
       {
@@ -88,32 +89,34 @@ function AboutPage() {
               delay={0}
               className="rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-soft"
             >
-              <span className="inline-flex size-40 items-center justify-center rounded-2xl bg-accent font-display text-4xl font-bold text-accent-foreground">
-                ES
-              </span>
+              <img
+                src={erkanImg}
+                alt="Erkan Sahin, Senior Accountant at Kaycarta Accountants"
+                width={768}
+                height={1365}
+                loading="lazy"
+                className="size-40 rounded-2xl object-cover object-[50%_40%] shadow-soft"
+              />
               <h3 className="mt-6 text-2xl">Erkan Sahin</h3>
-              <p className="mt-1 text-lg font-semibold text-brand">
-                Director &amp; Senior Accountant
-              </p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Principal · 22 years of experience in accounting and business
-              </p>
+              <p className="mt-1 text-lg font-semibold text-brand">Senior Accountant</p>
+              <p className="mt-2 text-sm text-muted-foreground">B.Com (Acc) · Member of IPA</p>
               <p className="mt-5 leading-relaxed text-muted-foreground">
-                With 22 years of experience in accounting and business, Erkan Sahin brings extensive
-                knowledge, practical insight, and a genuine passion for helping clients achieve
-                their financial goals.
+                Erkan Sahin is a Senior Accountant at Kaycarta Accountants, bringing over 22 years
+                of experience in accounting and financial services. He holds a Bachelor of Commerce
+                (Accounting), B.Com (Acc), and is a Member of the Institute of Public Accountants
+                (IPA).
               </p>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                Erkan is known for his approachable personality and his love of talking with people.
-                He enjoys getting to know his clients, understanding their businesses, and having
-                meaningful conversations about their financial and business needs. His friendly and
-                down-to-earth approach makes clients feel comfortable discussing even complex
-                accounting matters.
+                With extensive professional experience across accounting, taxation, financial
+                reporting and business advisory, Erkan has developed a strong understanding of the
+                financial and compliance needs of businesses and individuals. As a Director, he
+                plays an active role in overseeing client relationships and maintaining the high
+                standards of service delivered by Kaycarta Accountants.
               </p>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                At Kaycarta Accountants, Erkan combines his years of experience with a
-                people-focused approach, helping clients navigate their accounting, taxation, and
-                business requirements with confidence.
+                His extensive industry experience, professional knowledge and commitment to
+                providing practical and reliable financial solutions make him an integral part of
+                the Kaycarta team.
               </p>
             </Reveal>
 
@@ -124,37 +127,35 @@ function AboutPage() {
             >
               <img
                 src={prathyushaImg}
-                alt="Prathyusha Nadempalli, Director and Registered Tax Agent at Kaycarta Accountants"
-                width={640}
-                height={640}
+                alt="Prathyusha Nadempalli, Registered Tax Agent at Kaycarta Accountants"
+                width={1280}
+                height={853}
                 loading="lazy"
                 className="size-40 rounded-2xl object-cover object-top shadow-soft"
               />
               <h3 className="mt-6 text-2xl">Prathyusha Nadempalli</h3>
-              <p className="mt-1 text-lg font-semibold text-brand">
-                Director &amp; Registered Tax Agent
-              </p>
+              <p className="mt-1 text-lg font-semibold text-brand">Registered Tax Agent</p>
               <p className="mt-2 text-sm text-muted-foreground">
-                Principal · B.Com (Acc) · MPA · Member of IPA · Fellow NTAA
+                B.Com · MPA · Member of IPA (MIPA)
               </p>
               <p className="mt-5 leading-relaxed text-muted-foreground">
-                Prathyusha Nadempalli is the Director and Registered Tax Agent at Kaycarta
-                Accountants, bringing over 14 years of experience across taxation, accounting and
-                business advisory. She holds a Bachelor of Commerce (B.Com), Master of Professional
-                Accounting (MPA), and is a Member of the Institute of Public Accountants (MIPA) and
-                Fellow of the National Tax and Accountants&apos; Association (NTAA).
+                Prathyusha Nadempalli is a Registered Tax Agent at Kaycarta Accountants, bringing
+                over 14 years of experience in taxation, accounting, and business advisory services.
+                She holds a Bachelor of Commerce (B.Com), a Master of Professional Accounting (MPA),
+                and is a Member of the Institute of Public Accountants (MIPA).
               </p>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                Prathyusha takes a client-focused approach, helping individuals and businesses
-                manage their financial responsibilities with clarity and confidence. Her experience
-                covers bookkeeping, taxation, tax planning, payroll management and compliance across
-                a diverse range of industries.
+                Prathyusha is passionate about helping clients manage their financial
+                responsibilities efficiently and achieve their long-term goals. Known for her
+                attention to detail and client-focused approach, she works closely with individuals
+                and businesses to provide clear, practical, and results-driven financial guidance.
+                Her expertise spans across bookkeeping, tax planning, payroll management, and
+                compliance for a wide range of industries.
               </p>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                Known for her attention to detail and practical approach, Prathyusha works closely
-                with each client to understand their circumstances and provide clear, commercially
-                focused financial guidance. Outside her professional work, she enjoys travelling and
-                exploring new destinations.
+                Outside of her professional work, Prathyusha enjoys travelling and exploring new
+                destinations, drawing inspiration and balance from discovering new cultures and
+                experiences.
               </p>
             </Reveal>
           </div>
